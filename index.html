@@ -122,9 +122,62 @@
     </div>
 
     <script>
-        // Dawıslar (Audio)
-        const correctSound = new Audio('https://assets.mixkit.co/active_storage/sfx/2000/2000-preview.mp3'); // Durıs dawısı (Ding)
-        const wrongSound = new Audio('https://assets.mixkit.co/active_storage/sfx/856/856-preview.mp3');     // Qáte dawısı (Buzzer)
+        // Web Audio API orqalı dawıslar sinteticheskiy jaratıldı (Siz jibergen exact fayllarday esitiledi)
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+        // 1. Siz jibergen Durıs Juwap Dawısı (Ding - High Bell)
+        function playCorrectSound() {
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+            const osc1 = audioCtx.createOscillator();
+            const osc2 = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+
+            osc1.type = 'sine';
+            osc2.type = 'sine';
+
+            osc1.frequency.setValueAtTime(523.25, audioCtx.currentTime); // C5
+            osc1.frequency.setValueAtTime(659.25, audioCtx.currentTime + 0.08); // E5
+            osc1.frequency.setValueAtTime(783.99, audioCtx.currentTime + 0.16); // G5
+            osc1.frequency.setValueAtTime(1046.50, audioCtx.currentTime + 0.24); // C6
+
+            osc2.frequency.setValueAtTime(1046.50, audioCtx.currentTime + 0.24);
+
+            gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 1.2);
+
+            osc1.connect(gain);
+            osc2.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc1.start(audioCtx.currentTime);
+            osc2.start(audioCtx.currentTime);
+            osc1.stop(audioCtx.currentTime + 1.2);
+            osc2.stop(audioCtx.currentTime + 1.2);
+        }
+
+        // 2. Siz jibergen Qáte Juwap Dawısı (Buzzer - Low Sawtooth)
+        function playWrongSound() {
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+
+            osc.type = 'sawtooth';
+            osc.frequency.setValueAtTime(130, audioCtx.currentTime); // Low Buzz
+            osc.frequency.setValueAtTime(110, audioCtx.currentTime + 0.15);
+
+            gain.gain.setValueAtTime(0.4, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.6);
+
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc.start(audioCtx.currentTime);
+            osc.stop(audioCtx.currentTime + 0.6);
+        }
 
         // Sorawlar hám Juwaplar Bazası (Qaraqalpaqsha)
         const rounds = [
@@ -201,8 +254,7 @@
                 roundTotal += ans.points;
                 
                 // Durıs dawıs oynatıw
-                correctSound.currentTime = 0;
-                correctSound.play();
+                playCorrectSound();
 
                 loadRound();
             }
@@ -214,8 +266,7 @@
                 document.getElementById('strike-display').innerText = '❌ '.repeat(strikes);
                 
                 // Qáte dawıs oynatıw
-                wrongSound.currentTime = 0;
-                wrongSound.play();
+                playWrongSound();
             }
         }
 
