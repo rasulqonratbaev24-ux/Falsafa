@@ -180,41 +180,95 @@
         }
 
         // Sorawlar hám Juwaplar Bazası (Qaraqalpaqsha)
-        const rounds = [
+                const rounds = [
             {
-                question: "1-RAUND: Adamlardan 'Eń belgili filosof kim?' dep soraǵanda eń kóp aytılǵan 4 juwap:",
+                question: "1-RAUND: Áyyemgi Indiya turmısı hám dún'yaǵa kóz-qarası tuwralı maǵlumot beriwshi eń ertegi 4 qabatlı estelikler:",
                 answers: [
-                    { text: "1. Sokrat", points: 40, revealed: false },
-                    { text: "2. Aristotel", points: 30, revealed: false },
-                    { text: "3. Platon", points: 20, revealed: false },
-                    { text: "4. Ál-Farabi / Ibn Sina", points: 10, revealed: false }
+                    { text: "1. Vedalar", points: 45, revealed: false },
+                    { text: "2. Braxmanlar", points: 25, revealed: false },
+                    { text: "3. Aran'iyatlar", points: 20, revealed: false },
+                    { text: "4. Upanishadlar", points: 10, revealed: false }
                 ]
             },
             {
-                question: "2-RAUND: Tünde uyqlay almay jatqanda oyǵa keletuǵın eń kóp 4 falsafiy soraw:",
+                question: "2-RAUND: Zoroastrizm dininde ádep-ikramlıqtıń tiykarǵı kredosı bolǵan 3 tiykarǵı túsuncha (triada):",
                 answers: [
-                    { text: "1. Ómirimniń mánisi ne?", points: 45, revealed: false },
-                    { text: "2. Kelajakta men benen ne boladı?", points: 25, revealed: false },
-                    { text: "3. Nege dúnyada ádalatsızlık bar?", points: 20, revealed: false },
-                    { text: "4. Álemdiń shegi barmı?", points: 10, revealed: false }
+                    { text: "1. Jaqsı oy (Gumata)", points: 45, revealed: false },
+                    { text: "2. Jaqsı sóz (Guxta)", points: 25, revealed: false },
+                    { text: "3. Jaqsı is (Gvarishta)", points: 20, revealed: false },
+                    { text: "4. Denelik hám ruwxıy tazalıq", points: 10, revealed: false }
                 ]
             },
             {
-                question: "3-RAUND: Falsafa pániniń juwap izleytuǵın eń tiykarǵı 4 tarawı:",
+                question: "3-RAUND: Qıtay filosofiyasında dún'ya hám adam tuwralı túsunchalarda qollanılatuǵın 2 qarama-qarshi baslama:",
                 answers: [
-                    { text: "1. Bolmıs hám Dúnja (Ontologiya)", points: 35, revealed: false },
-                    { text: "2. Bilim hám Haqıyqat (Gnoseologiya)", points: 30, revealed: false },
-                    { text: "3. Ádep-ikramlıq (Etika)", points: 25, revealed: false },
-                    { text: "4. Sulýlıq hám Kórkem-óner (Estetika)", points: 10, revealed: false }
+                    { text: "1. In' (qarańǵı, passiv)", points: 55, revealed: false },
+                    { text: "2. Yan' (jaqtı, aktiv)", points: 35, revealed: false },
+                    { text: "3. Dao (jol)", points: 5, revealed: false },
+                    { text: "4. Aspan", points: 5, revealed: false }
                 ]
             },
             {
-                question: "4-RAUND: Adamlar ómirinde eń kóp qollanatuǵın 4 filosofiyalıq hikmet:",
+                question: "4-RAUND: B.e.sh. VI ásirde Indiyada payda bolǵan, tórt shınlıqqa tiykarlanǵan diniy-filosofiyalıq aǵım:",
                 answers: [
-                    { text: "1. 'Men hesh nárse bilmeytuǵınǵımdı bilemen' (Sokrat)", points: 40, revealed: false },
-                    { text: "2. 'Oylayman, demek barman' (Dekart)", points: 30, revealed: false },
-                    { text: "3. 'Waqıt — eń úlken hákim'", points: 20, revealed: false },
-                    { text: "4. 'Aql jasda emes, basta'", points: 10, revealed: false }
+                    { text: "1. Buddizm", points: 45, revealed: false },
+                    { text: "2. Djaynizm", points: 25, revealed: false },
+                    { text: "3. Induizm", points: 20, revealed: false },
+                    { text: "4. Lokayata", points: 10, revealed: false }
+                ]
+            },
+            {
+                question: "5-RAUND: Qıtayda genis tarqalǵan, ádep-ikramlıq hám social normalarǵa tiykarlanǵan ta'limat:",
+                answers: [
+                    { text: "1. Konfuciylik", points: 45, revealed: false },
+                    { text: "2. Daosizm", points: 25, revealed: false },
+                    { text: "3. Legizm", points: 20, revealed: false },
+                    { text: "4. Moistlik", points: 10, revealed: false }
+                ]
+            },
+            {
+                question: "6-RAUND: Islam filosofiyasında erik erkinligi hám táshdiyr máselelerin ortaǵa qoyǵan tiykarǵı aǵımlar:",
+                answers: [
+                    { text: "1. Mutazalitler", points: 45, revealed: false },
+                    { text: "2. Djabaritler", points: 25, revealed: false },
+                    { text: "3. Kadaritler", points: 20, revealed: false },
+                    { text: "4. Mutakallimler", points: 10, revealed: false }
+                ]
+            },
+            {
+                question: "7-RAUND: Oraylıq Aziyada shıǵısqa hám batısqa tanılǵan dáslepki ensiklopedist alimlar:",
+                answers: [
+                    { text: "1. Abu Nasr al-Farabi", points: 45, revealed: false },
+                    { text: "2. Abu Rayxan Beruniy", points: 25, revealed: false },
+                    { text: "3. Abu Ali Ibn Sina", points: 20, revealed: false },
+                    { text: "4. Muxammed al-Xorezmi", points: 10, revealed: false }
+                ]
+            },
+            {
+                question: "8-RAUND: Temuriyler dáwirinde Samarqandta ilim hám astronomiyanı rawajlandirǵan tiykarǵı shaxslar:",
+                answers: [
+                    { text: "1. Mirzo Uluǵbek", points: 45, revealed: false },
+                    { text: "2. Giyasiddin al-Kashi", points: 25, revealed: false },
+                    { text: "3. Ali Kushchi", points: 20, revealed: false },
+                    { text: "4. Qazizade Rumi", points: 10, revealed: false }
+                ]
+            },
+            {
+                question: "9-RAUND: Alisher Nawayı óziniń dóretiwshiliginde tiykarlanǵan tiykarǵı filosofiyalıq aǵımlar:",
+                answers: [
+                    { text: "1. Panteizm", points: 45, revealed: false },
+                    { text: "2. Sufizm", points: 30, revealed: false },
+                    { text: "3. Gumanizm", points: 15, revealed: false },
+                    { text: "4. Racionalizm", points: 10, revealed: false }
+                ]
+            },
+            {
+                question: "10-RAUND: Sufizmniń Oraylıq Aziyadaǵı eń ataqlı hám húkimdar qatlamlar menen islesken tuwısqanlıq (orden) tiykarshısı:",
+                answers: [
+                    { text: "1. Baxouddin Naqshband", points: 45, revealed: false },
+                    { text: "2. Xodja Ubaydulla Axrar", points: 25, revealed: false },
+                    { text: "3. Abuxalik al-Gijduvani", points: 20, revealed: false },
+                    { text: "4. Ahmad Yassawi", points: 10, revealed: false }
                 ]
             }
         ];
