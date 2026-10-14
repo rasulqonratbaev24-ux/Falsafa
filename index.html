@@ -81,31 +81,124 @@
 
     <h1>FALSAFIYLIK "SHAŃARAQ TARTYSI"</h1>
 
-<!-- 4 Komanda Tablosı -->
+<!-- CSS Style bólimi -->
+<style>
+    .teams-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+        width: 100%;
+        max-width: 850px;
+        margin-bottom: 20px;
+    }
+    .team-card {
+        background-color: #1e293b;
+        border: 2px solid #334155;
+        border-radius: 10px;
+        padding: 8px;
+        text-align: center;
+    }
+    .team-title {
+        color: #f43f5e;
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .team-score {
+        font-size: 20px;
+        font-weight: bold;
+        color: #facc15;
+        margin-bottom: 8px;
+        background: #0f172a;
+        padding: 4px;
+        border-radius: 5px;
+        border: 1px dashed #475569;
+    }
+    .score-controls {
+        display: flex;
+        gap: 4px;
+    }
+    .btn-score {
+        flex: 1;
+        padding: 6px 2px;
+        border: none;
+        border-radius: 4px;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 11px;
+        color: white;
+    }
+    .btn-plus { background-color: #22c55e; }
+    .btn-plus:hover { background-color: #16a34a; }
+    .btn-minus { background-color: #ef4444; }
+    .btn-minus:hover { background-color: #dc2626; }
+</style>
+
+<!-- HTML bólimi -->
 <div class="teams-container">
     <div class="team-card">
-        <h3>1-Komanda</h3>
-        <div class="score" id="score1">0</div>
-        <button class="btn btn-add" onclick="addPoints(1)">+ Ochko beriw</button>
+        <div class="team-title">1-Komanda</div>
+        <div class="team-score" id="score-1" contenteditable="true" onblur="updateManualScore(1)">0</div>
+        <div class="score-controls">
+            <button class="btn-score btn-plus" onclick="adjustScore(1, currentPot)">+ Pot</button>
+            <button class="btn-score btn-minus" onclick="adjustScore(1, -10)">-10</button>
+        </div>
     </div>
     <div class="team-card">
-        <h3>2-Komanda</h3>
-        <div class="score" id="score2">0</div>
-        <button class="btn btn-add" onclick="addPoints(2)">+ Ochko beriw</button>
+        <div class="team-title">2-Komanda</div>
+        <div class="team-score" id="score-2" contenteditable="true" onblur="updateManualScore(2)">0</div>
+        <div class="score-controls">
+            <button class="btn-score btn-plus" onclick="adjustScore(2, currentPot)">+ Pot</button>
+            <button class="btn-score btn-minus" onclick="adjustScore(2, -10)">-10</button>
+        </div>
     </div>
     <div class="team-card">
-        <h3>3-Komanda</h3>
-        <div class="score" id="score3">0</div>
-        <button class="btn btn-add" onclick="addPoints(3)">+ Ochko beriw</button>
+        <div class="team-title">3-Komanda</div>
+        <div class="team-score" id="score-3" contenteditable="true" onblur="updateManualScore(3)">0</div>
+        <div class="score-controls">
+            <button class="btn-score btn-plus" onclick="adjustScore(3, currentPot)">+ Pot</button>
+            <button class="btn-score btn-minus" onclick="adjustScore(3, -10)">-10</button>
+        </div>
     </div>
     <div class="team-card">
-        <h3>4-Komanda</h3>
-        <div class="score" id="score4">0</div>
-        <button class="btn btn-add" onclick="addPoints(4)">+ Ochko beriw</button>
+        <div class="team-title">4-Komanda</div>
+        <div class="team-score" id="score-4" contenteditable="true" onblur="updateManualScore(4)">0</div>
+        <div class="score-controls">
+            <button class="btn-score btn-plus" onclick="adjustScore(4, currentPot)">+ Pot</button>
+            <button class="btn-score btn-minus" onclick="adjustScore(4, -10)">-10</button>
+        </div>
     </div>
 </div>
 
+<!-- JavaScript bólimi -->
 <script>
+    function adjustScore(teamNum, amount) {
+        if (amount === currentPot && currentPot === 0) {
+            alert("Áweljúren juwaplardı ashıń!");
+            return;
+        }
+        teamScores[teamNum - 1] += amount;
+        if (teamScores[teamNum - 1] < 0) teamScores[teamNum - 1] = 0;
+        
+        document.getElementById("score-" + teamNum).innerText = teamScores[teamNum - 1];
+        
+        if (amount === currentPot) {
+            currentPot = 0;
+            updatePotDisplay();
+        }
+    }
+
+    function updateManualScore(teamNum) {
+        const val = parseInt(document.getElementById("score-" + teamNum).innerText);
+        if (!isNaN(val)) {
+            teamScores[teamNum - 1] = val;
+        } else {
+            document.getElementById("score-" + teamNum).innerText = teamScores[teamNum - 1];
+        }
+    }
+</script>
+
+</script>
     // Ball beriw funksiyası (qátesiz)
     function addPoints(teamNum) {
         if (currentPot === 0) {
