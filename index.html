@@ -14,32 +14,39 @@
         }
         h1 { color: #f1c40f; text-shadow: 2px 2px #000; }
         
-        /* Tablo / Ochkolar */
-        .teams-container {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 35px;
-        }
-        .team-card {
-            background-color: #16213e;
-            border: 4px solid #0f3460;
-            border-radius: 10px;
-            padding: 10px 20px;
-            width: 18%;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        }
-        .team-card h3 { margin: 5px 0; color: #e94560; }
-        .score { font-size: 24px; font-weight: bold; color: #f1c40f; }
+            /* Tablo / Ochkolar */
+    .teams-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto 35px auto;
+    }
 
-        /* Oyın Ekranı */
-        .board {
-            background-color: #0f3460;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(241, 196, 15, 0.4);
-        }
+    .team-card {
+        background-color: #16213e;
+        border: 2px solid #0f3460;
+        border-radius: 12px;
+        padding: 12px;
+        width: 100%;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    .team-card h3 { margin: 5px 0; color: #e94560; font-size: 16px; }
+    .score { font-size: 28px; font-weight: bold; color: #f1c40f; margin: 8px 0; }
+
+    /* Oyın Ekranı */
+    .board {
+        background-color: #0f3460;
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(241, 196, 15, 0.4);
+    }
+        
         .question { font-size: 22px; margin-bottom: 20px; color: #ffffff; }
         
         .answer-slot {
