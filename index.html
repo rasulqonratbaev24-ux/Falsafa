@@ -81,29 +81,44 @@
 
     <h1>FALSAFIYLIK "SHAŃARAQ TARTYSI"</h1>
 
-    <!-- 4 Komanda Tablosı -->
-    <div class="teams-container">
-        <div class="team-card">
-            <h3>1-Komanda</h3>
-            <div class="score" id="score1">0</div>
-            <button class="btn btn-add" onclick="addPoints(1)">+ Ochko beriw</button>
-        </div>
-        <div class="team-card">
-            <h3>2-Komanda</h3>
-            <div class="score" id="score2">0</div>
-            <button class="btn btn-add" onclick="addPoints(2)">+ Ochko beriw</button>
-        </div>
-        <div class="team-card">
-            <h3>3-Komanda</h3>
-            <div class="score" id="score3">0</div>
-            <button class="btn btn-add" onclick="addPoints(3)">+ Ochko beriw</button>
-        </div>
-        <div class="team-card">
-            <h3>4-Komanda</h3>
-            <div class="score" id="score4">0</div>
-            <button class="btn btn-add" onclick="addPoints(4)">+ Ochko beriw</button>
-        </div>
+<!-- 4 Komanda Tablosı -->
+<div class="teams-container">
+    <div class="team-card">
+        <h3>1-Komanda</h3>
+        <div class="score" id="score1">0</div>
+        <button class="btn btn-add" onclick="addPoints(1)">+ Ochko beriw</button>
     </div>
+    <div class="team-card">
+        <h3>2-Komanda</h3>
+        <div class="score" id="score2">0</div>
+        <button class="btn btn-add" onclick="addPoints(2)">+ Ochko beriw</button>
+    </div>
+    <div class="team-card">
+        <h3>3-Komanda</h3>
+        <div class="score" id="score3">0</div>
+        <button class="btn btn-add" onclick="addPoints(3)">+ Ochko beriw</button>
+    </div>
+    <div class="team-card">
+        <h3>4-Komanda</h3>
+        <div class="score" id="score4">0</div>
+        <button class="btn btn-add" onclick="addPoints(4)">+ Ochko beriw</button>
+    </div>
+</div>
+
+<script>
+    // Ball beriw funksiyası (qátesiz)
+    function addPoints(teamNum) {
+        if (currentPot === 0) {
+            alert("Áweljúren juwaplardı ashıń!");
+            return;
+        }
+        teamScores[teamNum - 1] += currentPot;
+        document.getElementById("score" + teamNum).innerText = teamScores[teamNum - 1];
+        
+        currentPot = 0;
+        updatePotDisplay();
+    }
+</script>
 
     <!-- Oyın Maydanı -->
     <div class="board">
