@@ -80,122 +80,19 @@ p<!DOCTYPE html>
 <body>
 
     <h1>FALSAFIYLIK</h1>
-
-<!-- CSS Style bólimi -->
-<style>
-    .teams-container {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 10px;
-        width: 100%;
-        max-width: 850px;
-        margin-bottom: 20px;
-    }
-    .team-card {
-        background-color: #1e293b;
-        border: 2px solid #334155;
-        border-radius: 10px;
-        padding: 10px 15px;
-        text-align: center;
-    }
-    .team-title {
-        color: #f43f5e;
-        font-size: 11px;
-        font-weight: bold;
-        margin-bottom: 3px;
-    }
-    .team-score {
-        font-size: 18px;
-        font-weight: bold;
-        color: #facc15;
-        margin-bottom: 5px;
-        background: #0f172a;
-        padding: 2px;
-        border-radius: 4px;
-        border: 1px dashed #475569;
-    }
-    .score-controls {
-        display: flex;
-        gap: 4px;
-    }
-    .btn-score {
-        flex: 1;
-        padding: 4px 2px;
-        border: none;
-        border-radius: 4px;
-        font-weight: bold;
-        cursor: pointer;
-        font-size: 10px;
-        color: white;
-    }
-    .btn-plus { background-color: #22c55e; }
-    .btn-plus:hover { background-color: #16a34a; }
-    .btn-minus { background-color: #ef4444; }
-    .btn-minus:hover { background-color: #dc2626; }
-</style>
-
-<!-- HTML bólimi -->
-<div class="teams-container">
-    <div class="team-card">
-        <div class="team-title">1-Komanda</div>
-        <div class="team-score" id="score-1" contenteditable="true" onblur="updateManualScore(1)">0</div>
-        <div class="score-controls">
-            <button class="btn-score btn-plus" onclick="adjustScore(1, currentPot)">+ Pot</button>
-            <button class="btn-score btn-minus" onclick="adjustScore(1, -10)">-10</button>
-        </div>
-    </div>
-    <div class="team-card">
-        <div class="team-title">2-Komanda</div>
-        <div class="team-score" id="score-2" contenteditable="true" onblur="updateManualScore(2)">0</div>
-        <div class="score-controls">
-            <button class="btn-score btn-plus" onclick="adjustScore(2, currentPot)">+ Pot</button>
-            <button class="btn-score btn-minus" onclick="adjustScore(2, -10)">-10</button>
-        </div>
-    </div>
-    <div class="team-card">
-        <div class="team-title">3-Komanda</div>
-        <div class="team-score" id="score-3" contenteditable="true" onblur="updateManualScore(3)">0</div>
-        <div class="score-controls">
-            <button class="btn-score btn-plus" onclick="adjustScore(3, currentPot)">+ Pot</button>
-            <button class="btn-score btn-minus" onclick="adjustScore(3, -10)">-10</button>
-        </div>
-    </div>
-    <div class="team-card">
-        <div class="team-title">4-Komanda</div>
-        <div class="team-score" id="score-4" contenteditable="true" onblur="updateManualScore(4)">0</div>
-        <div class="score-controls">
-            <button class="btn-score btn-plus" onclick="adjustScore(4, currentPot)">+ Pot</button>
-            <button class="btn-score btn-minus" onclick="adjustScore(4, -10)">-10</button>
-        </div>
-    </div>
+    
+<div class="score">
+<div class="team">T1 <input></div>
+<div class="team">T2 <input></div>
+<div class="team">T3 <input></div>
+<div class="team">T4 <input></div>
 </div>
 
-<!-- JavaScript bólimi -->
-<script>
-    function adjustScore(teamNum, amount) {
-        if (amount === currentPot && currentPot === 0) {
-            alert("Áweljúren juwaplardı ashıń!");
-            return;
-        }
-        teamScores[teamNum - 1] += amount;
-        if (teamScores[teamNum - 1] < 0) teamScores[teamNum - 1] = 0;
-        
-        document.getElementById("score-" + teamNum).innerText = teamScores[teamNum - 1];
-        
-        if (amount === currentPot) {
-            currentPot = 0;
-            updatePotDisplay();
-        }
-    }
+<div id="turnBox">🎯 : T1</div>
 
-    function updateManualScore(teamNum) {
-        const val = parseInt(document.getElementById("score-" + teamNum).innerText);
-        if (!isNaN(val)) {
-            teamScores[teamNum - 1] = val;
-        } else {
-            document.getElementById("score-" + teamNum).innerText = teamScores[teamNum - 1];
-        }
-    }
+<table id="board"></table>
+<div id="bonusBox"></div>
+
 </script>
 
     <!-- Oyın Maydanı -->
