@@ -198,21 +198,6 @@
     }
 </script>
 
-</script>
-    // Ball beriw funksiyası (qátesiz)
-    function addPoints(teamNum) {
-        if (currentPot === 0) {
-            alert("Áweljúren juwaplardı ashıń!");
-            return;
-        }
-        teamScores[teamNum - 1] += currentPot;
-        document.getElementById("score" + teamNum).innerText = teamScores[teamNum - 1];
-        
-        currentPot = 0;
-        updatePotDisplay();
-    }
-</script>
-
     <!-- Oyın Maydanı -->
     <div class="board">
         <div class="question" id="question-text">Raund Júklennekte...</div>
