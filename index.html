@@ -18,7 +18,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
+            padding: 15px;
             min-height: 100vh;
         }
 
@@ -26,14 +26,14 @@
             color: #facc15;
             margin-bottom: 20px;
             text-align: center;
-            font-size: 24px;
+            font-size: 22px;
             text-transform: uppercase;
         }
 
         .teams-container {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
+            gap: 10px;
             width: 100%;
             max-width: 800px;
             margin-bottom: 20px;
@@ -43,34 +43,34 @@
             background-color: #1e293b;
             border: 2px solid #334155;
             border-radius: 10px;
-            padding: 15px;
+            padding: 10px;
             text-align: center;
         }
 
         .team-title {
             color: #f43f5e;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: bold;
             margin-bottom: 5px;
         }
 
         .team-score {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
             color: #facc15;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .btn-add-score {
             background-color: #22c55e;
             color: white;
             border: none;
-            padding: 8px 5px;
+            padding: 8px 4px;
             border-radius: 6px;
             cursor: pointer;
             font-weight: bold;
             width: 100%;
-            font-size: 12px;
+            font-size: 11px;
         }
 
         .btn-add-score:hover {
@@ -81,7 +81,7 @@
             background-color: #1e3a8a;
             border: 3px solid #3b82f6;
             border-radius: 15px;
-            padding: 20px;
+            padding: 15px;
             width: 100%;
             max-width: 800px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
@@ -89,7 +89,7 @@
 
         .pot-score {
             text-align: center;
-            font-size: 20px;
+            font-size: 18px;
             color: #facc15;
             font-weight: bold;
             margin-bottom: 15px;
@@ -100,10 +100,10 @@
         }
 
         .question-box {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             min-height: 50px;
             display: flex;
             align-items: center;
@@ -115,14 +115,14 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .answer-row {
             background-color: #0f172a;
             border: 2px solid #06b6d4;
             border-radius: 8px;
-            padding: 12px 20px;
+            padding: 12px 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -136,7 +136,7 @@
         }
 
         .answer-text {
-            font-size: 16px;
+            font-size: 15px;
         }
 
         .answer-points {
@@ -151,12 +151,12 @@
         }
 
         .btn {
-            padding: 10px 20px;
+            padding: 10px 15px;
             border-radius: 8px;
             border: none;
             font-weight: bold;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 13px;
         }
 
         .btn-wrong {
@@ -176,9 +176,9 @@
 
         .strikes-container {
             text-align: center;
-            font-size: 30px;
+            font-size: 26px;
             color: #ef4444;
-            height: 40px;
+            height: 35px;
             margin-bottom: 10px;
             font-weight: bold;
         }
@@ -186,7 +186,7 @@
 </head>
 <body>
 
-    <h1>Falsafıylık "Shańaraq Tartısı"</h1>
+    <h1>FALSAFIYLIK "SHAŃARAQ TARTYSI"</h1>
 
     <!-- Teams Header -->
     <div class="teams-container">
@@ -214,9 +214,9 @@
 
     <!-- Main Game Board -->
     <div class="game-board">
-        <div class="pot-score">Raund Ochkosı: <span id="current-pot">0</span> pt</div>
+        <div class="pot-score">Raund Ochkosi: <span id="current-pot">0</span> pt</div>
         <div class="question-box" id="question-text">
-            Raund júklenbekte...
+            Júklenbekte...
         </div>
 
         <div class="answers-container" id="answers-list">
@@ -226,104 +226,103 @@
         <div class="strikes-container" id="strikes-display"></div>
 
         <div class="controls">
-            <button class="btn btn-wrong" onclick="addStrike()">❌ QÁTE (X)</button>
+            <button class="btn btn-wrong" onclick="addStrike()">QÁTE (X)</button>
             <button class="btn btn-clear-x" onclick="clearStrikes()">X-lerdi tazalaw</button>
             <button class="btn btn-next" onclick="nextRound()">Keyingi Raund ➡</button>
         </div>
     </div>
 
     <script>
-        // Kabuuang 24 na tanong
         const rounds = [
             // --- 2-TEMA: SHIǴIS FILOSOFIYASI (10 Raund) ---
             {
                 question: "1-RAUND: Áyyemgi Indiya turmısı hám dún'yaǵa kóz-qarası tuwralı maǵlumot beriwshi eń ertegi 4 qabatlı estelikler:",
                 answers: [
-                    { text: "1. Vedalar", points: 45, revealed: false },
-                    { text: "2. Braxmanlar", points: 25, revealed: false },
-                    { text: "3. Aran'iyatlar", points: 20, revealed: false },
-                    { text: "4. Upanishadlar", points: 10, revealed: false }
+                    { text: "1. Vedalar", points: 45 },
+                    { text: "2. Braxmanlar", points: 25 },
+                    { text: "3. Aran'iyatlar", points: 20 },
+                    { text: "4. Upanishadlar", points: 10 }
                 ]
             },
             {
                 question: "2-RAUND: Zoroastrizm dininde ádep-ikramlıqtıń tiykarǵı kredosı bolǵan 3 tiykarǵı túsuncha (triada):",
                 answers: [
-                    { text: "1. Jaqsı oy (Gumata)", points: 45, revealed: false },
-                    { text: "2. Jaqsı sóz (Guxta)", points: 25, revealed: false },
-                    { text: "3. Jaqsı is (Gvarishta)", points: 20, revealed: false },
-                    { text: "4. Denelik hám ruwxıy tazalıq", points: 10, revealed: false }
+                    { text: "1. Jaqsı oy (Gumata)", points: 45 },
+                    { text: "2. Jaqsı sóz (Guxta)", points: 25 },
+                    { text: "3. Jaqsı is (Gvarishta)", points: 20 },
+                    { text: "4. Denelik hám ruwxıy tazalıq", points: 10 }
                 ]
             },
             {
                 question: "3-RAUND: Qıtay filosofiyasında dún'ya hám adam tuwralı túsunchalarda qollanılatuǵın 2 qarama-qarshi baslama:",
                 answers: [
-                    { text: "1. In' (qarańǵı, passiv)", points: 55, revealed: false },
-                    { text: "2. Yan' (jaqtı, aktiv)", points: 35, revealed: false },
-                    { text: "3. Dao (jol)", points: 5, revealed: false },
-                    { text: "4. Aspan", points: 5, revealed: false }
+                    { text: "1. In' (qarańǵı, passiv)", points: 55 },
+                    { text: "2. Yan' (jaqtı, aktiv)", points: 35 },
+                    { text: "3. Dao (jol)", points: 5 },
+                    { text: "4. Aspan", points: 5 }
                 ]
             },
             {
                 question: "4-RAUND: B.e.sh. VI ásirde Indiyada payda bolǵan, tórt shınlıqqa tiykarlanǵan diniy-filosofiyalıq aǵım:",
                 answers: [
-                    { text: "1. Buddizm", points: 45, revealed: false },
-                    { text: "2. Djaynizm", points: 25, revealed: false },
-                    { text: "3. Induizm", points: 20, revealed: false },
-                    { text: "4. Lokayata", points: 10, revealed: false }
+                    { text: "1. Buddizm", points: 45 },
+                    { text: "2. Djaynizm", points: 25 },
+                    { text: "3. Induizm", points: 20 },
+                    { text: "4. Lokayata", points: 10 }
                 ]
             },
             {
                 question: "5-RAUND: Qıtayda genis tarqalǵan, ádep-ikramlıq hám social normalarǵa tiykarlanǵan ta'limat:",
                 answers: [
-                    { text: "1. Konfuciylik", points: 45, revealed: false },
-                    { text: "2. Daosizm", points: 25, revealed: false },
-                    { text: "3. Legizm", points: 20, revealed: false },
-                    { text: "4. Moistlik", points: 10, revealed: false }
+                    { text: "1. Konfuciylik", points: 45 },
+                    { text: "2. Daosizm", points: 25 },
+                    { text: "3. Legizm", points: 20 },
+                    { text: "4. Moistlik", points: 10 }
                 ]
             },
             {
                 question: "6-RAUND: Islam filosofiyasında erik erkinligi hám táshdiyr máselelerin ortaǵa qoyǵan tiykarǵı aǵımlar:",
                 answers: [
-                    { text: "1. Mutazalitler", points: 45, revealed: false },
-                    { text: "2. Djabaritler", points: 25, revealed: false },
-                    { text: "3. Kadaritler", points: 20, revealed: false },
-                    { text: "4. Mutakallimler", points: 10, revealed: false }
+                    { text: "1. Mutazalitler", points: 45 },
+                    { text: "2. Djabaritler", points: 25 },
+                    { text: "3. Kadaritler", points: 20 },
+                    { text: "4. Mutakallimler", points: 10 }
                 ]
             },
             {
                 question: "7-RAUND: Oraylıq Aziyada shıǵısqa hám batısqa tanılǵan dáslepki ensiklopedist alimlar:",
                 answers: [
-                    { text: "1. Abu Nasr al-Farabi", points: 45, revealed: false },
-                    { text: "2. Abu Rayxan Beruniy", points: 25, revealed: false },
-                    { text: "3. Abu Ali Ibn Sina", points: 20, revealed: false },
-                    { text: "4. Muxammed al-Xorezmi", points: 10, revealed: false }
+                    { text: "1. Abu Nasr al-Farabi", points: 45 },
+                    { text: "2. Abu Rayxan Beruniy", points: 25 },
+                    { text: "3. Abu Ali Ibn Sina", points: 20 },
+                    { text: "4. Muxammed al-Xorezmi", points: 10 }
                 ]
             },
             {
                 question: "8-RAUND: Temuriyler dáwirinde Samarqandta ilim hám astronomiyanı rawajlandirǵan tiykarǵı shaxslar:",
                 answers: [
-                    { text: "1. Mirzo Uluǵbek", points: 45, revealed: false },
-                    { text: "2. Giyasiddin al-Kashi", points: 25, revealed: false },
-                    { text: "3. Ali Kushchi", points: 20, revealed: false },
-                    { text: "4. Qazizade Rumi", points: 10, revealed: false }
+                    { text: "1. Mirzo Uluǵbek", points: 45 },
+                    { text: "2. Giyasiddin al-Kashi", points: 25 },
+                    { text: "3. Ali Kushchi", points: 20 },
+                    { text: "4. Qazizade Rumi", points: 10 }
                 ]
             },
             {
                 question: "9-RAUND: Alisher Nawayı óziniń dóretiwshiliginde tiykarlanǵan tiykarǵı filosofiyalıq aǵımlar:",
                 answers: [
-                    { text: "1. Panteizm", points: 45, revealed: false },
-                    { text: "2. Sufizm", points: 30, revealed: false },
-                    { text: "3. Gumanizm", points: 15, revealed: false },
-                    { text: "4. Racionalizm", points: 10, revealed: false }
+                    { text: "1. Panteizm", points: 45 },
+                    { text: "2. Sufizm", points: 30 },
+                    { text: "3. Gumanizm", points: 15 },
+                    { text: "4. Racionalizm", points: 10 }
                 ]
             },
             {
-                question: "10-RAUND: Sufizmniń Oraylıq Aziyadaǵı eń ataqlı hám húkimdar qatlamlar menen islesken tuwısqanlıq (orden) tiykarshısı:",
+                question: "10-RAUND: Sufizmniń Oraylıq Aziyadaǵı eń ataqlı hám húkimdar qatlamlar menen islesken tuwısqanlıq orden tiykarshısı:",
                 answers: [
-                    { text: "1. Baxouddin Naqshband", points: 45, revealed: false },
-                    { text: "2. Xodja Ubaydulla Axrar", points: 25, revealed: false },
-                    { text: "3. Abuxalik al-Gijduvani", points: 20, revealed: false },
-                    { text: "4. Ahmad Yassawi", points: 10, revealed: false }
+                    { text: "1. Baxouddin Naqshband", points: 45 },
+                    { text: "2. Xodja Ubaydulla Axrar", points: 25 },
+                    { text: "3. Abuxalik al-Gijduvani", points: 20 },
+                    { text: "4. Ahmad Yassawi", points: 10 }
                 ]
             },
 
@@ -331,129 +330,129 @@
             {
                 question: "11-RAUND: Áyyemgi Greciyada dún'yanıń birinshi tiykarın stixiyalardan izlegen Milet mektebi filosofları:",
                 answers: [
-                    { text: "1. Fales (Suw)", points: 45, revealed: false },
-                    { text: "2. Anaksimen (Hawa)", points: 25, revealed: false },
-                    { text: "3. Anaksimandr (Apeyron)", points: 20, revealed: false },
-                    { text: "4. Heraklit (Ot)", points: 10, revealed: false }
+                    { text: "1. Fales (Suw)", points: 45 },
+                    { text: "2. Anaksimen (Hawa)", points: 25 },
+                    { text: "3. Anaksimandr (Apeyron)", points: 20 },
+                    { text: "4. Heraklit (Ot)", points: 10 }
                 ]
             },
             {
                 question: "12-RAUND: Áyyemgi Greciyada dún'ya hám zatlardıń tiykarın atomlar ham boslıqtan turadı dep túsindirgen oyshıllar:",
                 answers: [
-                    { text: "1. Demokrit", points: 45, revealed: false },
-                    { text: "2. Levkipp", points: 25, revealed: false },
-                    { text: "3. Epikur", points: 20, revealed: false },
-                    { text: "4. Lucretius (Kar)", points: 10, revealed: false }
+                    { text: "1. Demokrit", points: 45 },
+                    { text: "2. Levkipp", points: 25 },
+                    { text: "3. Epikur", points: 20 },
+                    { text: "4. Lucretius (Kar)", points: 10 }
                 ]
             },
             {
                 question: "13-RAUND: Antik dáwir filosofiyasında ayrıqsha baǵdar jaratqan eń ataqlı klassik grek filosofları:",
                 answers: [
-                    { text: "1. Aristotel'", points: 45, revealed: false },
-                    { text: "2. Platon", points: 25, revealed: false },
-                    { text: "3. Sokrat", points: 20, revealed: false },
-                    { text: "4. Pifagor", points: 10, revealed: false }
+                    { text: "1. Aristotel", points: 45 },
+                    { text: "2. Platon", points: 25 },
+                    { text: "3. Sokrat", points: 20 },
+                    { text: "4. Pifagor", points: 10 }
                 ]
             },
             {
                 question: "14-RAUND: Ellinizm hám Rim dáwirinde keń tarqalǵan tiykarǵı filosofiyalıq mektep hám aǵımlar:",
                 answers: [
-                    { text: "1. Stoicizm (Stoikler)", points: 45, revealed: false },
-                    { text: "2. Epikureizm (Epikurshılar)", points: 25, revealed: false },
-                    { text: "3. Skepticizm (Skeptikler)", points: 20, revealed: false },
-                    { text: "4. Kinizm (Kinikler)", points: 10, revealed: false }
+                    { text: "1. Stoicizm (Stoikler)", points: 45 },
+                    { text: "2. Epikureizm (Epikurshılar)", points: 25 },
+                    { text: "3. Skepticizm (Skeptikler)", points: 20 },
+                    { text: "4. Kinizm (Kinikler)", points: 10 }
                 ]
             },
             {
                 question: "15-RAUND: Orta ásir xristian filosofiyası hám sxolastikasınıń tiykarǵı wákilleri:",
                 answers: [
-                    { text: "1. Foma Akvinskiy", points: 45, revealed: false },
-                    { text: "2. Avgustin Blajennıy", points: 25, revealed: false },
-                    { text: "3. Boeciy", points: 20, revealed: false },
-                    { text: "4. Ansel'm Kententerberiyskiy", points: 10, revealed: false }
+                    { text: "1. Foma Akvinskiy", points: 45 },
+                    { text: "2. Avgustin Blajennıy", points: 25 },
+                    { text: "3. Boeciy", points: 20 },
+                    { text: "4. Anselm Kententerberiyskiy", points: 10 }
                 ]
             },
             {
                 question: "16-RAUND: Oyanıw (Renessans) dáwirinde geliocentrizm hám panteizm ideyaların alǵa súrgen alım-filosoflar:",
                 answers: [
-                    { text: "1. N. Kopernik", points: 45, revealed: false },
-                    { text: "2. Djordano Bruno", points: 25, revealed: false },
-                    { text: "3. G. Galiley", points: 20, revealed: false },
-                    { text: "4. Nikolay Kuzanskiy", points: 10, revealed: false }
+                    { text: "1. N. Kopernik", points: 45 },
+                    { text: "2. Djordano Bruno", points: 25 },
+                    { text: "3. G. Galiley", points: 20 },
+                    { text: "4. Nikolay Kuzanskiy", points: 10 }
                 ]
             },
             {
-                question: "17-RAUND: Jańa dáwir Batıs filosofiyasında ilimiy biliw metodların (indukciya hám racionalizm) islep shıqqanlar:",
+                question: "17-RAUND: Jańa dáwir Batıs filosofiyasında ilimiy biliw metodların islep shıqqanlar:",
                 answers: [
-                    { text: "1. Rene Dekart (Racionalizm)", points: 45, revealed: false },
-                    { text: "2. Frencis Bekon (Indukciya)", points: 25, revealed: false },
-                    { text: "3. Benedikt Spinoza", points: 20, revealed: false },
-                    { text: "4. Tomas Gobbs", points: 10, revealed: false }
+                    { text: "1. Rene Dekart (Racionalizm)", points: 45 },
+                    { text: "2. Frencis Bekon (Indukciya)", points: 25 },
+                    { text: "3. Benedikt Spinoza", points: 20 },
+                    { text: "4. Tomas Gobbs", points: 10 }
                 ]
             },
             {
                 question: "18-RAUND: Biliw teoriyasında bilimlerdi seziw hám tájiriybeden alanamız deytuǵın empirizm hám sensualizm wákilleri:",
                 answers: [
-                    { text: "1. Djon Lokk ('Taza taqta')", points: 45, revealed: false },
-                    { text: "2. Devid Yum", points: 25, revealed: false },
-                    { text: "3. Djordj Berkli", points: 20, revealed: false },
-                    { text: "4. Frencis Bekon", points: 10, revealed: false }
+                    { text: "1. Djon Lokk (Taza taqta)", points: 45 },
+                    { text: "2. Devid Yum", points: 25 },
+                    { text: "3. Djordj Berkli", points: 20 },
+                    { text: "4. Frencis Bekon", points: 10 }
                 ]
             },
             {
                 question: "19-RAUND: Nemec klassikalıq filosofiyasının eń iri hám belgili wákilleri:",
                 answers: [
-                    { text: "1. Immanuil Kant", points: 45, revealed: false },
-                    { text: "2. Georg Vil'gel'm Gegel'", points: 25, revealed: false },
-                    { text: "3. I. G. Fixte", points: 20, revealed: false },
-                    { text: "4. F. Shelling", points: 10, revealed: false }
+                    { text: "1. Immanuil Kant", points: 45 },
+                    { text: "2. Georg Vilgelm Gegel", points: 25 },
+                    { text: "3. I. G. Fixte", points: 20 },
+                    { text: "4. F. Shelling", points: 10 }
                 ]
             },
             {
-                question: "20-RAUND: F. Bekon tárepinen ilimiy biliwge kesent etetuǵın sanadaǵı 4 'eles' (idol):",
+                question: "20-RAUND: F. Bekon tárepinen ilimiy biliwge kesent etetuǵın sanadaǵı 4 eles (idol):",
                 answers: [
-                    { text: "1. Rod (Uruǵ) elesleri", points: 45, revealed: false },
-                    { text: "2. Úńgir elesleri", points: 25, revealed: false },
-                    { text: "3. Bazar elesleri", points: 20, revealed: false },
-                    { text: "4. Teatr elesleri", points: 10, revealed: false }
+                    { text: "1. Rod (Uruǵ) elesleri", points: 45 },
+                    { text: "2. Úńgir elesleri", points: 25 },
+                    { text: "3. Bazar elesleri", points: 20 },
+                    { text: "4. Teatr elesleri", points: 10 }
                 ]
             },
 
-            // --- 4-TEMA: QOSIMSHA METODOLOGIYA (4 Raund) ---
+            // --- 4-TEMA: BATIS FILOSOFIYASI DÁWIRLERI (4 Raund) ---
             {
                 question: "21-RAUND: Jańa dáwir Batıs filosofiyasinda racionalizm hám induktiv metodqa tiykar salǵan tiykarǵı filosoflar:",
                 answers: [
-                    { text: "1. Rene Dekart (Racionalizm)", points: 45, revealed: false },
-                    { text: "2. Frensis Bekon (Indukciya)", points: 25, revealed: false },
-                    { text: "3. Benedikt Spinoza", points: 20, revealed: false },
-                    { text: "4. Tomas Gobbs", points: 10, revealed: false }
+                    { text: "1. Rene Dekart (Racionalizm)", points: 45 },
+                    { text: "2. Frensis Bekon (Indukciya)", points: 25 },
+                    { text: "3. Benedikt Spinoza", points: 20 },
+                    { text: "4. Tomas Gobbs", points: 10 }
                 ]
             },
             {
                 question: "22-RAUND: Biliw teoriyasinda bilimlerdi seziw hám tájiriybeden alanamız deytuǵın empirizm hám sensualizm wákilleri:",
                 answers: [
-                    { text: "1. Djon Lokk ('Taza taqta' - tabula rasa)", points: 45, revealed: false },
-                    { text: "2. Devid Yum", points: 25, revealed: false },
-                    { text: "3. Djordj Berkli", points: 20, revealed: false },
-                    { text: "4. Frensis Bekon", points: 10, revealed: false }
+                    { text: "1. Djon Lokk (Taza taqta - tabula rasa)", points: 45 },
+                    { text: "2. Devid Yum", points: 25 },
+                    { text: "3. Djordj Berkli", points: 20 },
+                    { text: "4. Frensis Bekon", points: 10 }
                 ]
             },
             {
                 question: "23-RAUND: Nemec klassikalıq filosofiyasının eń iri hám belgili wákilleri:",
                 answers: [
-                    { text: "1. Immanuil Kant", points: 45, revealed: false },
-                    { text: "2. Georg Vil'gel'm Gegel'", points: 25, revealed: false },
-                    { text: "3. I. G. Fixte", points: 20, revealed: false },
-                    { text: "4. F. Shelling", points: 10, revealed: false }
+                    { text: "1. Immanuil Kant", points: 45 },
+                    { text: "2. Georg Vilgelm Gegel", points: 25 },
+                    { text: "3. I. G. Fixte", points: 20 },
+                    { text: "4. F. Shelling", points: 10 }
                 ]
             },
             {
-                question: "24-RAUND: Frensis Bekon tárepinen ilimiy biliwge kesent etetuǵın sanadaǵı 4 'eles' (idol):",
+                question: "24-RAUND: Frensis Bekon tárepinen ilimiy biliwge kesent etetuǵın sanadaǵı 4 eles (idol):",
                 answers: [
-                    { text: "1. Rod (Uruǵ) elesleri", points: 45, revealed: false },
-                    { text: "2. Úńgir elesleri", points: 25, revealed: false },
-                    { text: "3. Bazar elesleri", points: 20, revealed: false },
-                    { text: "4. Teatr elesleri", points: 10, revealed: false }
+                    { text: "1. Rod (Uruǵ) elesleri", points: 45 },
+                    { text: "2. Úńgir elesleri", points: 25 },
+                    { text: "3. Bazar elesleri", points: 20 },
+                    { text: "4. Teatr elesleri", points: 10 }
                 ]
             }
         ];
@@ -462,16 +461,19 @@
         let currentPot = 0;
         let teamScores = [0, 0, 0, 0];
         let strikes = 0;
+        let revealedState = [];
 
         function loadRound(index) {
             if (index >= rounds.length) {
-                alert("O'yin juwmaqlandı! Barlıq raundlar tawsıldı.");
+                alert("O'yin tamomlandi!");
                 return;
             }
 
             currentRoundIndex = index;
             currentPot = 0;
             strikes = 0;
+            revealedState = [false, false, false, false];
+
             updatePotDisplay();
             updateStrikesDisplay();
 
@@ -482,4 +484,48 @@
             answersContainer.innerHTML = "";
 
             roundData.answers.forEach((ans, idx) => {
-                ans.revealed = false; // reset s
+                const row = document.createElement("div");
+                row.className = "answer-row";
+                row.id = "answer-" + idx;
+                row.onclick = function() { revealAnswer(idx); };
+
+                row.innerHTML = '<span class="answer-text">????????????</span><span class="answer-points">-- pt</span>';
+                answersContainer.appendChild(row);
+            });
+        }
+
+        function revealAnswer(ansIndex) {
+            if (!revealedState[ansIndex]) {
+                revealedState[ansIndex] = true;
+                const targetAns = rounds[currentRoundIndex].answers[ansIndex];
+                currentPot += targetAns.points;
+                updatePotDisplay();
+
+                const rowElem = document.getElementById("answer-" + ansIndex);
+                rowElem.innerHTML = '<span class="answer-text">' + targetAns.text + '</span><span class="answer-points">' + targetAns.points + ' pt</span>';
+                rowElem.style.borderColor = "#22c55e";
+            }
+        }
+
+        function updatePotDisplay() {
+            document.getElementById("current-pot").innerText = currentPot;
+        }
+
+        function givePointsToTeam(teamNum) {
+            if (currentPot === 0) {
+                alert("Avval javoblarni oching!");
+                return;
+            }
+            teamScores[teamNum - 1] += currentPot;
+            document.getElementById("score-" + teamNum).innerText = teamScores[teamNum - 1];
+            
+            currentPot = 0;
+            updatePotDisplay();
+        }
+
+        function addStrike() {
+            if (strikes < 3) {
+                strikes++;
+                updateStrikesDisplay();
+            }
+      
